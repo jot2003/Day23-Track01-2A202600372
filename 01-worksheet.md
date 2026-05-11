@@ -20,7 +20,36 @@ File này dùng để nhóm điền trong lớp, sau đó copy nội dung cuối
 
 Tóm tắt bài học từ case study để dùng cho dashboard.
 
-| Trường | Case thành công / tín hiệu tốt | Case cảnh báo / thất bại |
+| Thành viên | Tình huống AI bị kẹt | Dấu hiệu bị kẹt | Giả thuyết ban đầu |
+|---|---|---|---|
+| Hoàng Kim Trí Thành (2A202600372) | | | |
+| Quách Gia Được (2A202600423) | | | |
+| Nguyễn Thành Nam (2A202600205) | | | |
+| Nguyễn Trọng Tiến (2A202600228) | Ứng dụng AI để tự động hóa B24 translation cho sản phẩm, nhưng có nhiều trường hợp đặc biệt theo từng ngôn ngữ như tên sản phẩm phải giữ nguyên TA, đại từ xưng hô, từ chuyên ngành và các từ đa nghĩa | Reviewer phải yêu cầu sửa nhiều vòng, output không consistent giữa các ngôn ngữ, tốn nhiều token do prompt/retry liên tục | Chưa có bộ context và guideline chuẩn cho translation (glossary, reserved words, language rules, edge cases) để AI và intern follow thống nhất|
+
+### Nhóm gom lại thành 3-5 pattern
+
+| Pattern | Tình huống liên quan | Vì sao đáng chọn cho lab? |
+|---|---|---|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+| 4 | | |
+| 5 | | |
+
+**Thách thức nhóm chọn để làm lab:**  
+
+```markdown
+...
+```
+
+---
+
+## 2. Bảng So Sánh Case Thành Công / Thất Bại
+
+Mỗi nhóm phân tích 1 case thành công và 1 case thất bại/cảnh báo. Dùng `04-reference/case-clinic-summary.md` nếu cần.
+
+| Trường | Case thành công | Case thất bại/cảnh báo |
 |---|---|---|
 | Case | Stripe | Klarna |
 | AI được dùng trong workflow nào? | Dev workflow: AI draft -> PR review -> merge | CS/marketing workflow rollout rộng, nhấn mạnh coverage |
