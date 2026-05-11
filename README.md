@@ -3,7 +3,7 @@
 **Mã học viên:** 2A202600372  
 **Nhóm:** VinUni A20 — AI PT Copilot  
 **Thành viên nhóm:** Hoàng Kim Trí Thành (2A202600372), Quách Gia Được (2A202600423), Nguyễn Thành Nam (2A202600205), Nguyễn Trọng Tiến (2A202600228)  
-**Course repo:** https://github.com/VinUni-AI20k/Day23-Track01-AI-Adoption  
+**Template gốc (upstream):** https://github.com/VinUni-AI20k/Day23-Track01-AI-Adoption  
 **Repo nộp bài (fork):** https://github.com/jot2003/Day23-Track01-2A202600372
 
 ## Files nộp
@@ -14,5 +14,7 @@
 | `02-case-comparison.md` | Block 2 — So sánh 1 case thành công + 1 case cảnh báo (nhóm; bản copy cá nhân) |
 | `03-product-roi-dashboard.md` | Block 3–5 — Product ROI Dashboard Parts A–D v2 (nhóm; bản copy cá nhân) |
 | `04-reflection.md` | Reflect cá nhân 150–200 từ (sau buổi lab) |
+| `01-worksheet.md` | Worksheet tổng hợp theo đúng template upstream |
+| `06-task-assignment.md` | File phân công nhiệm vụ nhóm |
 
-Tài liệu khóa gốc trong repo: `Day23-Lab-Assignment.md`, `01-worksheet.md`, thư mục `02-templates/`.
+Tài liệu template gốc đã được sync từ upstream và dùng làm chuẩn để điền bài: `Day23-Lab-Assignment.md`, `01-worksheet.md`, thư mục `02-templates/`.
