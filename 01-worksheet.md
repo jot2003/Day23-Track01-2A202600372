@@ -1,287 +1,224 @@
-# Day 23 — Phiếu Làm Bài Dashboard Hành Động Cho Áp Dụng AI
+# Day 23 — Worksheet Product ROI Dashboard
 
-> File nhóm điền trong lớp và nộp cuối ngày. Làm theo thứ tự: thách thức cá nhân -> case thành công/thất bại -> chẩn đoán -> giải pháp -> dashboard -> phản biện -> sửa v2.
+File này dùng để nhóm điền trong lớp, sau đó copy nội dung cuối vào `03-product-roi-dashboard.md` trong repo cá nhân của từng thành viên.
 
 ---
 
-## 0. Thông Tin Nhóm
+## 0. Thông tin nhóm
 
 | Trường | Trả lời |
 |---|---|
-| Nhóm | VinUni A20 — AI PT Copilot (nhóm 4) |
-| Thành viên + phần phụ trách | 1) Hoàng Kim Trí Thành (2A202600372) — [điền phụ trách]  2) Quách Gia Được (2A202600423) — [điền phụ trách]  3) Nguyễn Thành Nam (2A202600205) — [điền phụ trách]  4) Nguyễn Trọng Tiến (2A202600228) — [điền phụ trách] |
-| Sản phẩm / công cụ AI chọn phân tích | [điền] |
-| Người dùng chính | [điền] |
-| Link / file nộp cuối | [điền] |
+| Nhóm | VinUni A20 — AI PT Copilot |
+| Thành viên + phần phụ trách | Hoàng Kim Trí Thành (2A202600372) — điều phối + decision memo; Quách Gia Được (2A202600423) — workflow map + trust UX; Nguyễn Thành Nam (2A202600205) — case comparison + red-team log; Nguyễn Trọng Tiến (2A202600228) — metric design + data source/owner |
+| Product chọn phân tích | AI PT Copilot (gợi ý rep/tempo/tư thế khi tập tại nhà) |
+| Người dùng chính | Người tập tại nhà 18–45 tuổi, không có PT trực tiếp |
+| Link repo / file nộp cuối | 01-case-evidence-matrix.md, 02-case-comparison.md, 03-product-roi-dashboard.md, 04-reflection.md |
 
 ---
 
-## 1. Ghi Chú Thách Thức Áp Dụng AI Cá Nhân
+## 1. Case Comparison
 
-Mỗi người viết 1-2 tình huống trong 10 phút đầu, không dùng AI.
+Tóm tắt bài học từ case study để dùng cho dashboard.
 
-| Thành viên | Tình huống AI bị kẹt | Dấu hiệu bị kẹt | Giả thuyết ban đầu |
-|---|---|---|---|
-| Hoàng Kim Trí Thành (2A202600372) | | | |
-| Quách Gia Được (2A202600423) | | | |
-| Nguyễn Thành Nam (2A202600205) | | | |
-| Nguyễn Trọng Tiến (2A202600228) | | | |
-
-### Nhóm gom lại thành 3-5 pattern
-
-| Pattern | Tình huống liên quan | Vì sao đáng chọn cho lab? |
+| Trường | Case thành công / tín hiệu tốt | Case cảnh báo / thất bại |
 |---|---|---|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| Case | Stripe | Klarna |
+| AI được dùng trong workflow nào? | Dev workflow: AI draft -> PR review -> merge | CS/marketing workflow rollout rộng, nhấn mạnh coverage |
+| Người dùng chính là ai? | Kỹ sư nội bộ có baseline cao | Nhân viên CS + stakeholder vận hành |
+| Họ đo metric gì? | Cycle time, defect/rework sau review | Tỷ lệ dùng AI, thông điệp AI-first, coverage |
+| Metric đó chứng minh được gì? | Productivity có qua cổng quality (review gate) | Khả năng triển khai nhanh và tạo hiệu ứng truyền thông |
+| Metric đó chưa chứng minh được gì? | Chưa tự chứng minh ROI tài chính nếu thiếu cost model | Chưa chứng minh trust, CSAT, complaint sau scale |
+| Thiếu metric nào? | Cost-to-serve theo giai đoạn | Escalation rate, QA pass sample, override reason |
+| Bài học cho dashboard nhóm | Metric phải đi qua human review + quality | Không dùng usage/coverage làm bằng chứng thành công cuối cùng |
 
-**Thách thức nhóm chọn để làm lab:**  
+**Bài học nhóm sẽ áp dụng vào dashboard:**
 
 ```markdown
-...
+Mỗi workflow phải đo theo chuỗi: activation -> human confirm -> quality/trust -> value.
+Không chốt thành công chỉ dựa vào session count hoặc prompt count.
 ```
 
 ---
 
-## 2. Bảng So Sánh Case Thành Công / Thất Bại
-
-Mỗi nhóm phân tích 1 case thành công và 1 case thất bại/cảnh báo. Dùng `04-reference/case-clinic-summary.md` nếu cần.
-
-| Trường | Case thành công | Case thất bại/cảnh báo |
-|---|---|---|
-| Case | | |
-| AI được dùng trong quy trình nào? | | |
-| Họ đo chỉ số gì? | | |
-| Chỉ số đó chứng minh được gì? | | |
-| Chỉ số đó chưa chứng minh được gì? | | |
-| Thiếu chỉ số nào? | | |
-| Bài học cho dashboard nhóm | | |
-
-**1 bài học nhóm sẽ áp dụng ngay:**  
-
-```markdown
-...
-```
-
----
-
-## 3. Phần A — Thách Thức Và Phạm Vi Sản Phẩm
+## 2. Part A — Adoption Context
 
 | Trường | Trả lời |
 |---|---|
-| Thách thức áp dụng AI | |
-| Sản phẩm / công cụ AI | |
-| Người dùng chính | |
-| Bối cảnh sử dụng | |
-| Mục tiêu kinh doanh / học tập / vận hành | |
+| Product | AI PT Copilot mobile |
+| Người dùng chính | Người tập tại nhà, tập 3-5 buổi/tuần |
+| Bối cảnh sử dụng | Dùng camera điện thoại để theo dõi tư thế + rep |
+| Mục tiêu kinh doanh / học tập / vận hành | Tăng retention tuần 2-4, giảm discomfort escalation, giảm time-to-first-aha |
+| Rào cản ADKAR chính | Knowledge + Reinforcement |
 
-### 2-4 quy trình chính
+### 2-4 workflow chính
 
-| # | Tên quy trình | Vai trò AI | Điểm người kiểm tra | Khi AI sai thì xử lý thế nào? |
+| # | Workflow | AI làm gì? | Con người kiểm tra ở đâu? | Khi AI sai thì xử lý thế nào? |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
+| 1 | Calibration & first session | Căn khung và tư thế baseline | User xác nhận khung rõ, pass checklist | Fallback sang preset an toàn + video hướng dẫn |
+| 2 | Live set coaching | Gợi ý rep/tempo, cảnh báo pose lệch | User confirm sau set nặng (RPE>=7) | Không cho tăng tải buổi sau, buộc review |
+| 3 | Post-session recap | Tóm tắt volume/RPE, gợi ý nghỉ | User chỉnh RPE thực tế | Nếu mismatch lớn thì flag và điều chỉnh plan thủ công |
+| 4 | - | - | - | - |
 
----
+### 3 tactic tăng adoption
 
-## 4. Phần B — Chẩn Đoán Nguyên Nhân Gốc
-
-Dùng 2-3 lăng kính. Không cần dùng tất cả.
-
-| Lăng kính | Câu hỏi | Chẩn đoán của nhóm | Evidence / quan sát |
+| Tactic | Nhắm vào rào cản nào? | Áp dụng cho workflow nào? | Người phụ trách |
 |---|---|---|---|
-| Quy trình công việc | Công việc thật có đổi không, hay chỉ thêm AI ở ngoài? | | |
-| ADKAR | Người dùng kẹt ở Awareness / Desire / Knowledge / Ability / Reinforcement? | | |
-| Mức sẵn sàng | Dữ liệu, quyền truy cập, người phụ trách, governance, budget đã sẵn sàng chưa? | | |
-| Chỉ số | Team đang đo usage hay đo value thật? | | |
-| Niềm tin / chất lượng | Người dùng có tin output không? Khi AI sai thì xử lý thế nào? | | |
-
-### Nguyên nhân gốc nhóm chọn
-
-| # | Nguyên nhân gốc | Vì sao đây là nguyên nhân chính? | Case nào hỗ trợ cách nhìn này? |
-|---|---|---|---|
-| 1 | | | |
-| 2 | | | |
+| Confirm-safe micro-flow cho set nặng | Knowledge + Trust | Workflow 2 | Thành + Tiến |
+| Safety card 1-tap có giải thích ngắn | Trust | Workflow 1-2 | Được |
+| Buddy week + recap có ngữ cảnh | Reinforcement | Workflow 3 | Nam |
 
 ---
 
-## 5. Phần C — Giải Pháp Và Lộ Trình 30/60/90 Ngày
+## 3. Part B — ROI Dashboard
 
-| Mốc | Việc cần làm | Người phụ trách | Dấu hiệu hoàn thành | Rủi ro còn lại |
-|---|---|---|---|---|
-| 0-30 ngày | | | | |
-| 31-60 ngày | | | | |
-| 61-90 ngày | | | | |
+### B.1 Metric toàn product
 
-### 3 tactic áp dụng
+| Layer | Metric | Baseline | Target | Data source | Owner | Red-team risk | Fix |
+|---|---|---:|---:|---|---|---|---|
+| Activation | % user hoàn tất calibration + buổi đầu <=10 phút | 55% | 80% | Onboarding funnel | Thành | Chỉ đẹp onboarding, chưa chắc value | Theo dõi drop-off theo từng step |
+| Engagement / Retention | % user có >=3 buổi có human confirm trong 14 ngày | 18% | 40% | Event `set_completed`, `human_confirm` | Tiến | Confirm quá dày gây mệt | Chỉ bắt buộc set nặng + QA sample |
+| Trust / Quality / Value | Trust score sau buổi (khi pass calibration) | 3.1/5 | 4.0/5 | In-app survey có điều kiện | Được | Survey bias khi user bực | Hỏi theo trigger phù hợp + thêm passive signal |
 
-| Tactic | Nhắm vào barrier nào? | Áp dụng cho quy trình nào? | Người phụ trách |
-|---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+### B.2 Metric theo workflow
+
+Sao chép block dưới cho mỗi workflow đã chọn. Mỗi workflow cần ít nhất 4 layer, ưu tiên Productivity + Quality + Trust hoặc Value.
+
+#### Workflow 1 — Calibration & first session
+
+| Layer | Metric | Baseline | Target | Data source | Owner | Red-team risk | Fix |
+|---|---|---:|---:|---|---|---|---|
+| Activation | % hoàn tất calibration | 62% | 85% | Onboarding events | Tiến | Quy trình dài gây drop | Cắt 1 bước + lưu trạng thái tạm |
+| Engagement | Time-to-first-working-rep | 8m | <=6m | Session timeline | Tiến | Loading chậm | Cache model nhẹ + skeleton UI |
+| Productivity | Retry calibration/user | 2.1 | <=1.5 | Retry count | Được | Support cost tăng | Diagnostic tự phục hồi |
+| Quality | % pass QA frame rule | 70% | 90% | CV logs | Tiến | False pass | Bắt buộc user confirm khung rõ |
+| Trust | % user chọn “không khớp” | 12% | <8% | UI event | Được | User không hiểu nút | Tooltip + icon hướng dẫn |
+| Value | % user vào WF2 trong 24h | 48% | 70% | Cross-workflow funnel | Thành | Chưa nói được bền vững | Theo dõi thêm retention 7 ngày |
+
+#### Workflow 2 — Live set coaching
+
+| Layer | Metric | Baseline | Target | Data source | Owner | Red-team risk | Fix |
+|---|---|---:|---:|---|---|---|---|
+| Activation | % set bật AI cue | 90% | 85% | Feature flag log | Tiến | Bật AI != dùng đúng | Đổi KPI thành % set có applied cue |
+| Engagement | % set nặng có confirm | 22% | 55% | `confirm_tap` | Thành | Friction khi confirm | Chỉ bắt buộc RPE>=7/compound |
+| Productivity | Median time/rep variance | baseline | -5% an toàn | Motion + timer | Tiến | Đẩy nhanh quá mức | Cap tempo + hard stop pose red |
+| Quality | % override có tag lý do | 65% | 100% | Event schema | Nam | Thiếu dữ liệu lý do | Bắt buộc tag khi override |
+| Trust | Post-set trust score | 3.0/5 | 4.2/5 | Survey theo set | Được | Bias theo độ mệt | Chỉ hỏi ở mốc hợp lý |
+| Value | % discomfort escalation | 3.5% | <2% | Safety ticket | Thành | Under-report | Anonymous log + hotline copy |
+
+#### Workflow 3 — Post-session recap
+
+| Layer | Metric | Baseline | Target | Data source | Owner | Red-team risk | Fix |
+|---|---|---:|---:|---|---|---|---|
+| Activation | % mở recap trong 2h | 40% | 60% | Push + open log | Nam | Spam notification | Chỉ gửi sau buổi có confirm |
+| Engagement | % chỉnh RPE thực tế | 15% | 35% | Recap form | Nam | Form dài | Prefill + slider 1 chạm |
+| Productivity | Thời gian chỉnh recap | 75s | <45s | UX telemetry | Được | Mất chi tiết | Template ngắn theo goal |
+| Quality | % recap khớp log set (+/-10%) | 50% | 80% | Cross-check data | Tiến | Cost pipeline | Reconcile mẫu 30% trước full |
+| Trust | % tin đề xuất ngày nghỉ | 28% | 45% | Accept/override event | Thành | Copy khó hiểu | Thêm câu “vì sao nghỉ” |
+| Value | 7-day return sau recap mở | 20% | 38% | Cohort retention | Thành | Nhiễu lịch cá nhân | So sánh cohort có/không recap |
+
+#### Workflow 4 — [nếu có]
+
+| Layer | Metric | Baseline | Target | Data source | Owner | Red-team risk | Fix |
+|---|---|---:|---:|---|---|---|---|
+| Activation | - | - | - | - | - | - | - |
+| Engagement | - | - | - | - | - | - | - |
+| Productivity | - | - | - | - | - | - | - |
+| Quality | - | - | - | - | - | - | - |
+| Trust | - | - | - | - | - | - | - |
+| Value | - | - | - | - | - | - | - |
 
 ---
 
-## 6. Phần D — Dashboard Đo ROI Của Sản Phẩm
+## 4. Part C — Dashboard Mock
 
-### D.1 Chỉ số toàn sản phẩm
-
-| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu | Nguồn dữ liệu | Người phụ trách | Rủi ro từ phản biện | Sửa ở v2 |
-|---|---|---:|---:|---|---|---|---|
-| Activation | | | | | | | |
-| Retention / Value | | | | | | | |
-| Trust hoặc Quality | | | | | | | |
-
-### D.2 Chỉ số theo từng quy trình
-
-Sao chép block dưới cho mỗi quy trình đã chọn. Mỗi quy trình cần ít nhất 4 lớp đo, ưu tiên Productivity + Quality + Trust + Value.
-
-#### Quy trình 1 — [tên]
-
-| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu | Nguồn dữ liệu | Người phụ trách | Rủi ro từ phản biện | Sửa ở v2 |
-|---|---|---:|---:|---|---|---|---|
-| Activation | | | | | | | |
-| Engagement | | | | | | | |
-| Productivity | | | | | | | |
-| Quality | | | | | | | |
-| Trust | | | | | | | |
-| Value | | | | | | | |
-
-#### Quy trình 2 — [tên]
-
-| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu | Nguồn dữ liệu | Người phụ trách | Rủi ro từ phản biện | Sửa ở v2 |
-|---|---|---:|---:|---|---|---|---|
-| Activation | | | | | | | |
-| Engagement | | | | | | | |
-| Productivity | | | | | | | |
-| Quality | | | | | | | |
-| Trust | | | | | | | |
-| Value | | | | | | | |
-
-#### Quy trình 3 — [nếu có]
-
-| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu | Nguồn dữ liệu | Người phụ trách | Rủi ro từ phản biện | Sửa ở v2 |
-|---|---|---:|---:|---|---|---|---|
-| Activation | | | | | | | |
-| Engagement | | | | | | | |
-| Productivity | | | | | | | |
-| Quality | | | | | | | |
-| Trust | | | | | | | |
-| Value | | | | | | | |
-
-#### Quy trình 4 — [nếu có]
-
-| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu | Nguồn dữ liệu | Người phụ trách | Rủi ro từ phản biện | Sửa ở v2 |
-|---|---|---:|---:|---|---|---|---|
-| Activation | | | | | | | |
-| Engagement | | | | | | | |
-| Productivity | | | | | | | |
-| Quality | | | | | | | |
-| Trust | | | | | | | |
-| Value | | | | | | | |
-
----
-
-## 7. Phần E — Dashboard Mock
-
-Vẽ 4-6 ô. Ô đầu tiên là tình trạng toàn sản phẩm, các ô sau là tín hiệu theo quy trình hoặc quyết định.
+Vẽ 4-6 ô. Ô đầu tiên là tình trạng toàn product, các ô sau là tín hiệu theo workflow hoặc quyết định.
 
 ```text
-┌────────────────────────────────────┐ ┌────────────────────────────────────┐
-│ TILE 1: PRODUCT HEALTH             │ │ TILE 2: WORKFLOW 1                 │
-│ Number: __________________________ │ │ Number: __________________________ │
-│ Trend: ___________________________ │ │ Trend: ___________________________ │
-│ Status: GREEN / AMBER / RED        │ │ Status: GREEN / AMBER / RED        │
-│ Action: __________________________ │ │ Action: __________________________ │
-└────────────────────────────────────┘ └────────────────────────────────────┘
+┌──────────────────────────────┐ ┌──────────────────────────────┐
+│ PRODUCT HEALTH               │ │ WORKFLOW 1                   │
+│ Metric: 3-session confirm    │ │ Metric: calib <=10'          │
+│ Current: 18% Target: 40%     │ │ Current: 55% Target: 80%     │
+│ Status: Amber                │ │ Status: Amber                │
+│ Action if red: confirm-lite  │ │ Action if red: cut 1 step    │
+└──────────────────────────────┘ └──────────────────────────────┘
 
-┌────────────────────────────────────┐ ┌────────────────────────────────────┐
-│ TILE 3: WORKFLOW 2                 │ │ TILE 4: WORKFLOW 3 / TRUST         │
-│ Number: __________________________ │ │ Number: __________________________ │
-│ Trend: ___________________________ │ │ Trend: ___________________________ │
-│ Status: GREEN / AMBER / RED        │ │ Status: GREEN / AMBER / RED        │
-│ Action: __________________________ │ │ Action: __________________________ │
-└────────────────────────────────────┘ └────────────────────────────────────┘
+┌──────────────────────────────┐ ┌──────────────────────────────┐
+│ WORKFLOW 2                   │ │ QUALITY / TRUST              │
+│ Metric: heavy-set confirm    │ │ Metric: trust score          │
+│ Current: 22% Target: 55%     │ │ Current: 3.1 Target: 4.0     │
+│ Status: Red                  │ │ Status: Amber                │
+│ Action if red: force RPE>=7  │ │ Action if red: adjust trigger│
+└──────────────────────────────┘ └──────────────────────────────┘
 
-┌────────────────────────────────────┐ ┌────────────────────────────────────┐
-│ TILE 5: VALUE / COVERAGE           │ │ TILE 6: DECISION                   │
-│ Number: __________________________ │ │ Continue / Pivot / Kill: _________ │
-│ Trend: ___________________________ │ │ Metric mạnh nhất: ________________ │
-│ Status: GREEN / AMBER / RED        │ │ Action: __________________________ │
-└────────────────────────────────────┘ └────────────────────────────────────┘
+┌──────────────────────────────┐ ┌──────────────────────────────┐
+│ VALUE                         │ │ DECISION                     │
+│ Metric: 7-day return          │ │ Continue / Pivot / Kill: Continue |
+│ Current: 20% Target: 38%      │ │ Metric mạnh nhất: confirm+trust |
+│ Status: Amber                 │ │ Before scale: pilot 60 ngày   |
+└──────────────────────────────┘ └──────────────────────────────┘
 ```
 
 ---
 
-## 8. Phần F — Phản Biện Vai Và Sửa V2
+## 5. Part D — Decision Memo
 
-### Nhóm mình đi phản biện nhóm khác
+```markdown
+# Decision Memo — AI PT Copilot
+
+1. Nhóm khuyến nghị: continue (pilot có kiểm soát).
+
+2. Metric mạnh nhất để bảo vệ quyết định là:
+   % heavy-set có human confirm hoàn tất + trust score sau buổi.
+
+3. Metric hoặc giả định nhóm đã sửa sau red-team là:
+   V1: prompt/session và session/week.
+   V2: confirm completion + override reason + trust có điều kiện.
+   Vì sao sửa này tốt hơn: khó bị cheat, đo đúng hành vi trong workflow có rủi ro.
+
+4. Trước khi scale, nhóm phải:
+   1. Chốt schema event confirm/override trong 2 tuần.
+   2. Chạy pilot 30-50 user có safety cap.
+   3. Review mẫu video hằng tuần trước rollout rộng.
+```
+
+---
+
+## 6. Red-team và sửa v2
+
+### Nhóm mình đi red-team nhóm khác
 
 | Vai nhóm được giao | Nhóm bị phản biện | 3 câu hỏi / rủi ro nhóm mình nêu |
 |---|---|---|
-| CFO / Người dùng / Rủi ro / Chủ quy trình | | 1.  2.  3. |
+| Risk | [điền tên nhóm] | 1. AI sai ai chịu trách nhiệm? 2. Có audit trail theo workflow không? 3. Khi metric đỏ thì ai hành động? |
 
-### Nhóm mình bị phản biện
+### Nhóm mình bị red-team
 
-| Rủi ro được nêu | Chỉ số / giả định bị chất vấn | Nhóm sửa gì ở v2? |
+| Red-team risk | Metric / giả định bị chất vấn | Nhóm sửa gì ở v2? |
 |---|---|---|
-| 1 | | |
-| 2 | | |
-| 3 | | |
+| Confirm quá dày gây phiền | Engagement đo bằng confirm mọi set | Chỉ bắt buộc confirm cho set nặng |
+| Trust survey bias | Survey hỏi ngẫu nhiên | Hỏi sau pass calibration, sampling hợp lý |
+| Data pipeline tốn chi phí | Reconcile chất lượng full-scan | Đổi sang sampled reconcile 30% |
 
 ### Ít nhất 2 thay đổi cụ thể từ v1 sang v2
 
 | # | V1 có vấn đề gì? | V2 sửa thành gì? | Vì sao sửa này tốt hơn? |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Đo prompt/session là engagement chính | Đo heavy-set confirm rate + applied cue rate | Gắn vào hành vi an toàn trong workflow |
+| 2 | Hỏi trust ngẫu nhiên | Hỏi trust theo điều kiện + giảm tần suất | Giảm fatigue, tăng độ tin cậy dữ liệu |
+| 3 | Không bắt buộc lý do override | Bắt buộc tag override reason | Có dữ liệu sửa model/UX đúng điểm nghẽn |
 
 ---
 
-## 9. Phần G — Memo Quyết Định
+## 7. Checklist trước khi nộp
 
-```markdown
-# Memo Quyết Định Cuối — [tên sản phẩm]
-
-1. Nhóm khuyến nghị: tiếp tục / đổi hướng / dừng.
-
-2. Chỉ số mạnh nhất để bảo vệ quyết định là:
-
-3. Chỉ số hoặc giả định nhóm đã sửa sau phản biện là:
-
-4. Trước khi scale, nhóm phải:
-   1.
-   2.
-   3.
-```
-
----
-
-## 10. Nhật Ký Dùng AI (AI Support Log)
-
-Điền nếu nhóm dùng AI sau phần làm cá nhân ban đầu.
-
-| AI đã giúp gì? | AI trả lời sai / chung chung ở đâu? | Nhóm đã sửa bằng tay như thế nào? |
-|---|---|---|
-| | | |
-
----
-
-## 11. Checklist Trước Khi Nộp
-
-- [ ] Có challenge rõ, không chỉ nói "AI adoption khó".
-- [ ] Có 1 sản phẩm cụ thể, không chọn "AI cho cả công ty".
-- [ ] Có 2-4 quy trình chính.
-- [ ] Có 1-2 nguyên nhân gốc với evidence.
-- [ ] Có lộ trình 30/60/90 ngày, có người phụ trách.
-- [ ] Dashboard có chỉ số toàn sản phẩm và chỉ số theo quy trình.
-- [ ] Không chỉ đo usage: login, prompt count, DAU/MAU.
-- [ ] Có nguồn dữ liệu và người phụ trách cho các chỉ số chính.
-- [ ] Có rủi ro từ phản biện và ít nhất 2 sửa đổi từ v1 sang v2.
-- [ ] Memo quyết định có tiếp tục / đổi hướng / dừng.
+- [x] Có 1 product cụ thể, không chọn "AI cho cả công ty".
+- [x] Có 2-4 workflow chính.
+- [x] Mỗi workflow có vai trò AI, human review và failure path.
+- [x] Có rào cản ADKAR chính.
+- [x] Dashboard có metric toàn product và metric theo workflow.
+- [x] Không chỉ đo usage: login, prompt count, DAU/MAU.
+- [x] Có baseline, target, data source và owner cho các metric chính.
+- [x] Có ít nhất 1 metric Quality, Trust hoặc Value.
+- [x] Có Red-team risk và Fix.
+- [x] Có ít nhất 2 thay đổi rõ từ v1 sang v2.
+- [x] Decision Memo có continue / pivot / kill.
