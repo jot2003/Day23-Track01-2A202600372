@@ -6,111 +6,135 @@
 
 ---
 
+## Source map (bắt buộc cho mọi metric và dẫn chứng)
+
+### A. Nguồn bên ngoài (external)
+- **E1:** OpenAI — Morgan Stanley case study: https://openai.com/index/morgan-stanley/
+- **E2:** OpenAI — Klarna case study: https://openai.com/index/klarna/
+- **E3:** Reuters — Klarna shifts AI focus (2025): https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/
+- **E4:** 05-reference-document.md (Section 6, 7.3, 7.5, 10)
+
+### B. Nguồn nội bộ (internal evidence)
+- **I1:** Pilot log nội bộ Day 23 (cohort nhỏ 5–8 user, buổi lab 2026-05-11), gồm event onboarding/session/confirm/override.
+- **I2:** Ghi chú red-team trong lớp (vai CFO/User/Risk/Workflow Owner), 2026-05-11.
+- **I3:** Quan sát nhóm về friction UX trong bài tập mô phỏng (không đại diện production scale).
+
+> Quy tắc: số trong dashboard được coi là **pilot baseline nội bộ** từ I1 (sample nhỏ). Không được trình bày như benchmark thị trường.
+
+---
+
 ## Part A — Adoption Context
 
 ### A.1 Thách thức nhóm chọn
 
-| Trường | Trả lời |
-|--------|---------|
-| Thách thức áp dụng AI | Người tập mở app tuần đầu nhưng **không tái sử dụng** theo chu kỳ; nghi ngờ gợi ý tư thế/rep; team đang đo nhầm “có bật AI”. |
-| Tình huống xuất phát từ ai / ở đâu? | Beta nội bộ + bạn bè (5–8 người), tập tại nhà. |
-| Dấu hiệu bị kẹt | Session count cao tuần 1 → giảm tuần 2–3; nhiều **override** gợi ý; không hoàn thành chuỗi 3 buổi/tuần. |
-| Vì sao thách thức này đáng giải quyết? | Rủi ro an toàn (tư thế sai) + không chứng minh được PMF nếu chỉ có “wow” ban đầu. |
+| Trường | Trả lời | Nguồn |
+|--------|---------|-------|
+| Thách thức áp dụng AI | Người tập mở app tuần đầu nhưng **không tái sử dụng** theo chu kỳ; nghi ngờ gợi ý tư thế/rep; team đang đo nhầm “có bật AI”. | I1, I3 |
+| Tình huống xuất phát từ ai / ở đâu? | Beta nội bộ + bạn bè (5–8 người), tập tại nhà. | I1 |
+| Dấu hiệu bị kẹt | Session tuần 1 cao hơn tuần 2; override tăng ở set nặng; không hoàn thành chuỗi 3 buổi/tuần. | I1 |
+| Vì sao thách thức này đáng giải quyết? | Rủi ro an toàn + không chứng minh được PMF nếu chỉ có “wow” ban đầu. | I3, E4 |
 
 ### A.2 Sản phẩm / công cụ AI
 
-| Trường | Trả lời |
-|--------|---------|
-| Tên sản phẩm / công cụ AI | **AI PT Copilot** — mobile app gợi ý rep, tempo và hiệu chỉnh tư thế (pose keypoints). |
-| Người dùng chính | Người tập tại nhà, trình độ trung bình, 18–45 tuổi. |
-| Bối cảnh sử dụng | Tập một mình; thi thoảng có video soi gương; mạng ổn định vừa phải. |
-| Mục tiêu kinh doanh / học tập / vận hành | **Retention tuần 2–4** + **an toàn** (giảm chỉnh sai nặng) + thời gian tới “aha” buổi tập đầu ≤ 10 phút. |
-| Không nằm trong phạm vi | Huấn luyện viên chuyên nghiệp; thiết bị đo EMG; y khoa chẩn đoán. |
+| Trường | Trả lời | Nguồn |
+|--------|---------|-------|
+| Tên sản phẩm / công cụ AI | **AI PT Copilot** — mobile app gợi ý rep, tempo và hiệu chỉnh tư thế. | I1 |
+| Người dùng chính | Người tập tại nhà, trình độ trung bình, 18–45 tuổi. | I1 |
+| Bối cảnh sử dụng | Tập một mình, camera điện thoại, môi trường không có PT trực tiếp. | I1, I3 |
+| Mục tiêu kinh doanh / học tập / vận hành | Tăng retention tuần 2–4 + giảm rủi ro discomfort + giảm time-to-first-aha. | I1, E4 |
+| Không nằm trong phạm vi | Huấn luyện viên chuyên nghiệp; thiết bị y khoa/chẩn đoán. | I3 |
 
 ### A.3 2–4 quy trình chính (core workflows)
 
-| # | Tên quy trình | Vai trò AI | Điểm người kiểm tra | Khi AI sai thì xử lý thế nào? |
-|---|----------------|------------|---------------------|--------------------------------|
-| 1 | **Calibration & first session** | Gợi ý góc camera + khung người; checklist khởi động | User xác nhận “thấy rõ khung”; fallback wizard | Giảm độ tin cậy gợi ý; chuyển **preset bài tập không AI** + link video minh họa |
-| 2 | **Live set — rep & pose coaching** | Gợi ý tempo/rep; cảnh báo pose lệch ngưỡng | User **bấm xác nhận** sau set; optional coach async review mẫu | Ngưỡng cảnh báo **strict hơn**; bắt buộc xác nhận trước khi tăng load tuần sau |
-| 3 | **Post-session recap** | Tóm tắt volume RPE; đề xuất ngày nghỉ / progres | User chỉnh RPE thực tế; rule an toàn Product | Nếu mismatch lớn → flag cho PM + template điều chỉnh plan thủ công |
+| # | Tên quy trình | Vai trò AI | Điểm người kiểm tra | Khi AI sai thì xử lý thế nào? | Nguồn |
+|---|----------------|------------|---------------------|--------------------------------|-------|
+| 1 | Calibration & first session | Gợi ý góc camera + khung người | User xác nhận “thấy rõ khung” | Giảm độ tự động, chuyển preset an toàn + video minh họa | I1, I3 |
+| 2 | Live set — rep & pose coaching | Cảnh báo pose lệch, gợi ý tempo/rep | User xác nhận sau set nặng | Hạ ngưỡng tăng tải, buộc review trước buổi sau | I1, I2 |
+| 3 | Post-session recap | Tóm tắt volume/RPE, đề xuất nghỉ | User chỉnh RPE thực tế | Mismatch lớn thì flag, chuyển chỉnh thủ công | I1, I2 |
 
 ### A.4 ADKAR — barrier chính (product-level)
 
-| Stage | Nhận định nhóm |
-|-------|----------------|
-| Awareness | Ổn — user hiểu app “có AI”. |
-| Desire | Trung bình — “thử cho vui” có, nhưng **sợ sai** khiến không muốn phụ thuộc. |
-| Knowledge | **Yếu** — không rõ khi nào nên tin AI vs tự cảm nhận. |
-| Ability | Trung bình — UX calibration còn lỗi trên vài máy. |
-| Reinforcement | **Yếu** — thiếu phản hồi **tin cậy sau buổi tập** (chỉ có streak, không có “bạn đã làm đúng phần nào”). |
+| Stage | Nhận định nhóm | Nguồn |
+|-------|----------------|-------|
+| Awareness | Ổn — user hiểu app “có AI”. | I3 |
+| Desire | Trung bình — “thử cho vui” có, nhưng sợ sai khi bài nặng. | I1, I3 |
+| Knowledge | **Yếu** — chưa rõ khi nào nên tin AI vs tự cảm nhận. | I2, I3 |
+| Ability | Trung bình — calibration còn lỗi trên một số máy. | I1 |
+| Reinforcement | **Yếu** — thiếu tín hiệu củng cố tin cậy sau buổi tập. | I1, I2 |
 
-**Barrier chính:** **Knowledge + Reinforcement**, phụ **Trust/Quality** (không tin output + không có vòng lặp củng cố tin).
+**Barrier chính:** Knowledge + Reinforcement (phụ: Trust/Quality).  
+**Nguồn:** I1, I2, E4.
 
 ### A.5 3 tactic adoption (product-level)
 
-| # | Tactic | Nhắm barrier | Quy trình | Owner | Hoàn thành |
-|---|--------|---------------|-----------|-------|-------------|
-| 1 | **“Confirm-safe” micro-flow** sau mỗi set nặng | Knowledge + Trust | WF2 | PM + Eng | Tuần 2 pilot |
-| 2 | **Thẻ an toàn 1-tap** (“khớp khớp / không khớp”) + copy ngắn giải thích *vì sao* | Trust | WF1–2 | UX | Tuần 1–2 |
-| 3 | **Buddy week** — gợi ý tập cùng bạn, so sánh RPE ẩn danh | Reinforcement | WF3 | Growth/PM | Tuần 3–4 |
+| # | Tactic | Nhắm barrier | Quy trình | Owner | Hoàn thành | Nguồn chọn tactic |
+|---|--------|---------------|-----------|-------|-------------|-------------------|
+| 1 | Confirm-safe micro-flow sau set nặng | Knowledge + Trust | WF2 | PM + Eng | Tuần 2 pilot | I2, E4 |
+| 2 | Thẻ an toàn 1-tap + giải thích ngắn | Trust | WF1–2 | UX | Tuần 1–2 | I2, E4 |
+| 3 | Buddy week + recap có ngữ cảnh | Reinforcement | WF3 | Growth/PM | Tuần 3–4 | I2, E4 |
 
 ### A.6 Chẩn đoán nguyên nhân gốc (2–3 lens)
 
-| Lens | Chẩn đoán | Evidence |
-|------|-----------|----------|
-| Workflow | AI **chưa nằm trong** “chuỗi xác nhận an toàn” — chỉ overlay trên video. | Nhiều session bỏ giữa chừng sau cảnh báo pose. |
-| Metrics | Đo **session + prompt** → vanity theo học từ case **Klarna**/JPM-style dashboard. | Dashboard nội bộ cũ không có **confirm rate** / **override lý do**. |
-| Trust/Quality | Thiếu proxy **chất lượng chuyển động** sau human confirm. | Post-session survey không gắn theo workflow. |
+| Lens | Chẩn đoán | Evidence | Nguồn |
+|------|-----------|----------|-------|
+| Workflow | AI chưa nằm trọn trong chuỗi xác nhận an toàn | Session drop sau cảnh báo pose | I1 |
+| Metrics | Đo session/prompt dễ thành vanity | Dashboard cũ thiếu confirm/override_reason | I1, E4 |
+| Trust/Quality | Thiếu proxy chất lượng sau human confirm | Survey cũ không gắn theo workflow | I1, I2 |
 
-**Nguyên nhân gốc (chốt):** thiếu **human-in-the-loop có đo** + metric **trust/quality** gắn workflow, khiến team tưởng adoption tốt khi usage cao tuần 1.
+**Nguyên nhân gốc (chốt):** thiếu human-in-the-loop có đo + thiếu metric trust/quality theo workflow.  
+**Nguồn hỗ trợ case:** E1, E2, E3, E4.
 
 ---
 
 ## Part B — Product ROI Dashboard
 
+### Ghi chú dữ liệu trước khi đọc bảng
+- Tất cả baseline dưới đây là **pilot baseline nội bộ** từ I1 (sample nhỏ).
+- Các metric được thiết kế dựa trên pattern “productivity phải đi với quality/trust” từ E4.
+- Cột “Data source” phải truy được về I1/I2 (nội bộ) hoặc E* (external case logic).
+
 ### B.1 Chỉ số toàn sản phẩm (2–3 metric)
 
-| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu 60 ngày | Nguồn dữ liệu | Owner | Rủi ro red-team (col 7) | Fix v2 (col 8) |
-|--------|--------|-------------|------------------|---------------|-------|-------------------------|----------------|
-| Activation | **% user hoàn tất calibration + buổi tập đầu ≤10’** | 55% | 80% | Funnel onboarding | PM | CFO: chi phí dev không tương xứng nếu chỉ đẹp onboarding | Gắn **drop-off step** trong funnel để biết sửa UX vs model |
-| Retention / Value | **% user có ≥3 buổi có “completed confirm” trong 14 ngày** | 18% | 40% | Event `set_completed` + `human_confirm` | PM/Data | User: fatigue vì quá nhiều xác nhận | V1: hỏi mỗi set → **V2: chỉ set nặng + random QA 20%** |
-| Trust / Quality | **Trust score** = trung bình thẻ 1–5 sau buổi (“tin gợi ý”) | 3.1 | 4.0 | In-app micro-survey | UX | Risk: survey bias khi user bực | V2: **chỉ hỏi sau buổi PASS** calibration + sample off-session |
+| Lớp đo | Chỉ số | Mốc hiện tại | Mục tiêu 60 ngày | Nguồn dữ liệu cụ thể | Owner | Rủi ro red-team | Fix v2 | Nguồn dẫn chứng |
+|--------|--------|-------------|------------------|----------------------|-------|-----------------|--------|-----------------|
+| Activation | % user hoàn tất calibration + buổi tập đầu <=10’ | 55% | 80% | I1: onboarding events (`calibration_complete`, `first_session_complete`) | PM | Chỉ đẹp onboarding, chưa chắc value | Thêm drop-off theo step | I1, I2 |
+| Retention / Value | % user có >=3 buổi có `human_confirm=1` trong 14 ngày | 18% | 40% | I1: session log + confirm events theo user-day | PM/Data | Confirm quá dày gây mệt | Chỉ bắt buộc set nặng + QA sample | I1, I2, E4 |
+| Trust / Quality | Trust score sau buổi (chỉ tính user pass calibration) | 3.1 | 4.0 | I1: in-app survey + filter `calibration_pass=1` | UX | Survey bias | Hỏi theo trigger hợp lý + thêm passive proxy | I1, I2, E4 |
 
 ### B.2 Theo từng workflow
 
 #### Workflow 1 — Calibration & first session
 
-| Lớp đo | Chỉ số | Baseline | Target | Nguồn | Owner | Red-team risk | Fix v2 |
-|--------|--------|----------|--------|-------|-------|----------------|--------|
-| Activation | % hoàn tất calibration | 62% | 85% | Onboarding events | Eng | Workflow owner: bỏ qua bước vì dài | Rút **1 bước**; lưu partial state |
-| Engagement | Time-to-first working rep | 8 phút | ≤6 phút | Session timeline | Eng | User: vẫn thấy “loading model” lâu | Cache model nhỏ + skeleton UI |
-| Productivity | # lần thử lại calibration / user | 2.1 | ≤1.5 | Retry count | Eng | CFO: tốn support | Thêm **diagnostic tự phục hồi** |
-| Quality | % calibration **pass QA rule** (frame OK) | 70% | 90% | CV pipeline logs | Eng | Risk: false positive an toàn | Giảm ngưỡng “pass” nhưng **bắt buộc** user confirm “tôi thấy rõ” |
-| Trust | % user chọn “không khớp” ở bước khung | 12% | <8% | Button events | UX | User: không hiểu nút | Tooltip + icon động |
-| Value | **% user vào WF2 trong 24h sau WF1** | 48% | 70% | Cross-workflow funnel | PM | — | Giữ nguyên, thêm cohort view |
+| Lớp đo | Chỉ số | Baseline | Target | Nguồn dữ liệu cụ thể | Owner | Red-team risk | Fix v2 | Nguồn dẫn chứng |
+|--------|--------|----------|--------|----------------------|-------|----------------|--------|-----------------|
+| Activation | % hoàn tất calibration | 62% | 85% | I1: onboarding funnel step-by-step | Eng | Quy trình dài gây drop | Cắt 1 bước, lưu partial state | I1, I2 |
+| Engagement | Time-to-first-working-rep | 8 phút | <=6 phút | I1: session timeline (start -> first valid rep) | Eng | Loading model chậm | Cache model nhẹ + skeleton UI | I1 |
+| Productivity | Retry calibration / user | 2.1 | <=1.5 | I1: retry_count | Eng | Support cost tăng | Diagnostic tự phục hồi | I1, I2 |
+| Quality | % calibration pass QA frame rule | 70% | 90% | I1: CV logs + rule check | Eng | False pass | Bắt buộc user confirm khung rõ | I1, I2 |
+| Trust | % user bấm “không khớp” ở bước khung | 12% | <8% | I1: UI button events | UX | User không hiểu nút | Tooltip + icon động | I1 |
+| Value | % user vào WF2 trong 24h | 48% | 70% | I1: cross-workflow funnel | PM | Chưa phản ánh bền vững | Thêm cohort 7-day | I1, E4 |
 
 #### Workflow 2 — Live set (rep & pose coaching)
 
-| Lớp đo | Chỉ số | Baseline | Target | Nguồn | Owner | Red-team risk | Fix v2 |
-|--------|--------|----------|--------|-------|-------|----------------|--------|
-| Activation | % set có bật AI cue | 90% | 85% *(giảm cố ý spam)* | Feature flag | Eng | CFO: “bật AI” ≠ dùng đúng | Thay KPI nội bộ: **% set có ≥1 applied cue** (user không skip) |
-| Engagement | % set hoàn thành có **confirm** | 22% | 55% | `confirm_tap` | PM | User: phiền | V2: chỉ set RPE≥7 hoặc **compound** |
-| Productivity | Median time / rep (vs baseline user) | — | −5% variance an toàn | Motion + timer | Eng | Risk: khuyến khích tempo nguy hiểm | Cap tempo + **hard stop** khi pose red |
-| Quality | **Override rate có tag lý do** | 35% không tag | 100% tag | Event schema | PM | — | V2: bắt buộc tag khi override |
-| Trust | **Post-set trust** (1–5) | 3.0 | 4.2 | Survey | UX | — | Gắn survey **theo độ khó set** |
-| Value | **% session có escalation “pain/discomfort” <2%** | 3.5% | <2% | Safety ticket | PM/Risk | Risk: under-report | Hotline micro-copy + anonymous log |
+| Lớp đo | Chỉ số | Baseline | Target | Nguồn dữ liệu cụ thể | Owner | Red-team risk | Fix v2 | Nguồn dẫn chứng |
+|--------|--------|----------|--------|----------------------|-------|----------------|--------|-----------------|
+| Activation | % set bật AI cue | 90% | 85% *(giảm spam)* | I1: feature flag + cue event | Eng | Bật AI != dùng đúng | Đổi KPI: % set có applied cue | I1, I2 |
+| Engagement | % set nặng có confirm | 22% | 55% | I1: `confirm_tap` filtered by RPE>=7 | PM | Confirm gây friction | Chỉ bắt buộc set nặng/compound | I1, I2 |
+| Productivity | Median time/rep variance | baseline | -5% variance an toàn | I1: motion + timer logs | Eng | Đẩy nhanh gây nguy hiểm | Cap tempo + hard stop pose red | I1, I2 |
+| Quality | % override có tag lý do | 65% | 100% | I1: override event schema | PM | Thiếu lý do override | Bắt buộc tag khi override | I1, I2 |
+| Trust | Post-set trust (1–5) | 3.0 | 4.2 | I1: survey theo set loại nặng | UX | Bias theo độ mệt | Hỏi theo trigger set phù hợp | I1, I2 |
+| Value | % session discomfort escalation | 3.5% | <2% | I1: safety ticket + escalation log | PM/Risk | Under-report | Anonymous log + hotline copy | I1, I2, E4 |
 
 #### Workflow 3 — Post-session recap
 
-| Lớp đo | Chỉ số | Baseline | Target | Nguồn | Owner | Red-team risk | Fix v2 |
-|--------|--------|----------|--------|-------|-------|----------------|--------|
-| Activation | % mở recap trong 2h | 40% | 60% | Push + open | Growth | User: spam notification | V1: daily ping → **V2: chỉ sau buổi có confirm** |
-| Engagement | % chỉnh RPE thực tế | 15% | 35% | Form | PM | — | Prefill + slider 1-tap |
-| Productivity | Thời gian chỉnh recap | 75s | <45s | UX telemetry | UX | — | Template ngắn theo goal |
-| Quality | % recap **khớp** log set (±10%) | 50% | 80% | Cross-check | Data | CFO: cost data pipeline | V2: **sampled reconcile** 30% trước khi full |
-| Trust | % “tin đề xuất ngày nghỉ” | 28% | 45% | Button | PM | — | Giải thích 1 câu “vì sao nghỉ” |
-| Value | **7-day return** sau recap mở | 20% | 38% | Cohort | PM | — | A/B copy “nhắc an toàn” vs “nhắc PR” |
+| Lớp đo | Chỉ số | Baseline | Target | Nguồn dữ liệu cụ thể | Owner | Red-team risk | Fix v2 | Nguồn dẫn chứng |
+|--------|--------|----------|--------|----------------------|-------|----------------|--------|-----------------|
+| Activation | % mở recap trong 2h | 40% | 60% | I1: push_sent -> recap_opened | Growth | Spam notification | Chỉ gửi sau buổi có confirm | I1, I2 |
+| Engagement | % chỉnh RPE thực tế | 15% | 35% | I1: recap_edit events | PM | Form dài | Prefill + slider 1-tap | I1 |
+| Productivity | Thời gian chỉnh recap | 75s | <45s | I1: UX telemetry duration | UX | Mất chi tiết | Template ngắn theo goal | I1 |
+| Quality | % recap khớp log set (±10%) | 50% | 80% | I1: cross-check recap vs set log | Data | Cost pipeline | Reconcile mẫu 30% trước full | I1, I2 |
+| Trust | % tin đề xuất ngày nghỉ | 28% | 45% | I1: accept/override button log | PM | Copy khó hiểu | Thêm “vì sao nghỉ” 1 câu | I1, I2 |
+| Value | 7-day return sau recap mở | 20% | 38% | I1: cohort retention (recap opened) | PM | Nhiễu lịch cá nhân | So sánh cohort có/không recap | I1, E4 |
 
 ---
 
@@ -119,26 +143,29 @@
 ```text
 ┌────────────────────────────────────┐ ┌────────────────────────────────────┐
 │ TILE 1: PRODUCT HEALTH             │ │ TILE 2: WF1 CALIBRATION            │
-│ Metric: 3-session confirm rate 14d │ │ Metric: calib completion ≤10'      │
-│ Current: 18%  Target: 40%          │ │ Current: 55%  Target: 80%        │
-│ Status: AMBER                      │ │ Status: AMBER                    │
-│ Action: ship confirm-lite v2     │ │ Action: cut 1 step + save state   │
+│ Metric: 3-session confirm rate 14d │ │ Metric: calib completion <=10'     │
+│ Current: 18%  Target: 40%          │ │ Current: 55%  Target: 80%          │
+│ Status: AMBER                      │ │ Status: AMBER                      │
+│ Action: ship confirm-lite v2       │ │ Action: cut 1 step + save state    │
+│ Source: I1                         │ │ Source: I1                         │
 └────────────────────────────────────┘ └────────────────────────────────────┘
 
 ┌────────────────────────────────────┐ ┌────────────────────────────────────┐
-│ TILE 3: WF2 LIVE SET               │ │ TILE 4: TRUST / SAFETY           │
-│ Metric: confirm on heavy sets      │ │ Metric: discomfort escalation %   │
-│ Current: 22%  Target: 55%         │ │ Current: 3.5%  Target: <2%       │
-│ Status: RED                        │ │ Status: AMBER                    │
-│ Action: mandatory confirm RPE≥7   │ │ Action: copy + anonymous log      │
+│ TILE 3: WF2 LIVE SET               │ │ TILE 4: TRUST / SAFETY             │
+│ Metric: confirm on heavy sets      │ │ Metric: discomfort escalation %    │
+│ Current: 22%  Target: 55%          │ │ Current: 3.5%  Target: <2%         │
+│ Status: RED                        │ │ Status: AMBER                      │
+│ Action: mandatory confirm RPE>=7   │ │ Action: copy + anonymous log       │
+│ Source: I1 + I2                    │ │ Source: I1 + I2                    │
 └────────────────────────────────────┘ └────────────────────────────────────┘
 
 ┌────────────────────────────────────┐ ┌────────────────────────────────────┐
-│ TILE 5: WF3 RECAP VALUE            │ │ TILE 6: DECISION                  │
-│ Metric: 7-day return after recap   │ │ Continue — metric: confirm+trust  │
-│ Current: 20%  Target: 38%         │ │ Before scale: QA rule + tag override│
-│ Status: AMBER                    │ │ Owner: PM (Tri Thanh) + Eng lead   │
-│ Action: A/B safety-first copy     │ │                                    │
+│ TILE 5: WF3 RECAP VALUE            │ │ TILE 6: DECISION                   │
+│ Metric: 7-day return after recap   │ │ Continue — metric: confirm+trust   │
+│ Current: 20%  Target: 38%          │ │ Before scale: schema + QA checks   │
+│ Status: AMBER                      │ │ Source: I1 + E4                    │
+│ Action: A/B safety-first copy      │ │                                    │
+│ Source: I1                         │ │                                    │
 └────────────────────────────────────┘ └────────────────────────────────────┘
 ```
 
@@ -149,28 +176,29 @@
 ```markdown
 # Memo Quyết Định Cuối — AI PT Copilot
 
-1. Nhóm khuyến nghị: **tiếp tục** (Continue) — với điều kiện ưu tiên trust workflow trước growth.
+1. Nhóm khuyến nghị: **tiếp tục** (Continue) theo pilot có kiểm soát.
 
 2. Chỉ số mạnh nhất để bảo vệ quyết định là:
-   **% buổi tập có “human confirm” hoàn tất trên set nặng (RPE≥7)** kết hợp **trust score sau buổi**,
-   vì đây là chuỗi duy nhất nối **usage → quality/trust → retention** mà không bị cheat bằng mở app nhiều lần.
+   **% buổi tập set nặng có human confirm hoàn tất** + **trust score sau buổi**,
+   vì chuỗi này nối usage -> quality/trust -> retention và khó bị “chạy số”.
 
 3. Chỉ số nhóm đã sửa sau phản biện:
-   **V1:** “AI prompts per session” và “weekly active sessions” làm thước engagement.
-   **V2:** thay bằng **confirm completion rate** + **override có tag lý do** + **trust score có điều kiện (post-calibration)**.
-   V1 yếu vì dễ gaming và học sai từ các case kiểu **Klarna** (đo coverage). V2 đo hành vi có trách nhiệm trong workflow.
+   V1: session volume/prompt volume.
+   V2: confirm completion + override_reason + trust có điều kiện.
+   Vì sao tốt hơn: bám workflow rủi ro cao, có cổng kiểm chất lượng.
 
 4. Trước khi scale sản phẩm, nhóm phải:
-   1. Chốt schema event `confirm` / `override_reason` — Owner Eng — hết tuần 2 pilot.
-   2. Chạy 30-user cohort với **safety cap** tempo — Owner PM — tuần 3–4.
-   3. Review mẫu 20 video **human spot-check** / tuần — Owner Product + advisor — liên tục 8 tuần.
+   1. Chốt schema event `confirm` / `override_reason` (nguồn kiểm: I1).
+   2. Chạy pilot cohort 30-user có safety cap rõ (thiết kế theo E4, evidence nội bộ I1).
+   3. Review mẫu video hằng tuần bằng human spot-check (I2).
 ```
 
 ---
 
-## ≥2 thay đổi bắt buộc v1 → v2 (tóm tắt)
+## ≥2 thay đổi bắt buộc v1 -> v2 (tóm tắt)
 
-| # | V1 | V2 |
-|---|----|----|
-| 1 | Engagement = session + prompt volume | Engagement = **confirm completion** trên set có rủi ro + applied cue rate |
-| 2 | Survey trust ngẫu nhiên | Trust **sau buổi đạt calibration** + giảm tần suất hỏi để tránh fatigue (học red-team User) |
+| # | V1 | V2 | Nguồn red-team/evidence |
+|---|----|----|--------------------------|
+| 1 | Engagement = session + prompt volume | Engagement = confirm completion (set rủi ro) + applied cue rate | I2, E4 |
+| 2 | Survey trust ngẫu nhiên | Trust sau buổi đạt calibration + sampling hợp lý | I2, I1 |
+| 3 | Override không bắt buộc lý do | Override bắt buộc `reason_tag` | I2, I1 |

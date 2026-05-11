@@ -45,6 +45,14 @@ Mỗi thành viên phải tự thực hiện trong repo cá nhân của mình:
 - Không chỉ dùng usage metrics (login/prompt count/DAU-MAU); bắt buộc có quality/trust/value.
 - Sau phản biện red-team, phải sửa ít nhất 2 điểm từ v1 sang v2 và ghi rõ trong file.
 
+### Quy định mới: bắt buộc dẫn nguồn cho mọi metric/evidence
+
+- Mỗi claim về case phải có link nguồn cụ thể (ví dụ: OpenAI case, Reuters, tài liệu tham khảo lớp).
+- Mỗi metric trong dashboard phải ghi rõ data source và mã nguồn truy vết (E1/E2/E3/E4 hoặc I1/I2).
+- Nếu là số nội bộ/pilot thì phải ghi rõ: thời điểm, cỡ mẫu, phạm vi (không trình bày như benchmark thị trường).
+- Tách rõ **Fact từ nguồn** và **Phân tích nhóm**; không dùng số liệu AI tự sinh.
+- Mỗi thành viên tự chịu trách nhiệm kiểm tra source trong phần mình phụ trách trước khi merge.
+
 ---
 
 ## 5) Checklist bàn giao nội bộ

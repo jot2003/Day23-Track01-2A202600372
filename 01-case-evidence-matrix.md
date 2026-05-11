@@ -1,26 +1,38 @@
 # 01 — Case Evidence Matrix (Block 2, cá nhân)
 
 **Học viên:** Hoàng Kim Trí Thành — **Mã:** 2A202600372  
-**Case:** Klarna — tín hiệu cảnh báo adoption (truyền thông và phạm vi đo vs vận hành thật).
+**Case cá nhân chọn:** Klarna — cảnh báo bẫy đo adoption bằng coverage/usage.
+
+---
+
+## Nguồn dùng cho case này (bắt buộc trích dẫn)
+
+- **S1 (practitioner/company-published):** OpenAI — Klarna case study: https://openai.com/index/klarna/
+- **S2 (major news):** Reuters — Klarna điều chỉnh trọng tâm AI năm 2025: https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/
+- **S3 (teaching reference):** 05-reference-document.md (Section 6, 7.5, 10)
+
+> Lưu ý: phần nào không có số liệu định lượng từ nguồn công khai thì ghi rõ là “nhận định phân tích”, không bịa thêm số.
 
 ---
 
 ## 8-field matrix
 
-| # | Trường | Nội dung |
-|---|--------|----------|
-| 1 | **Case** | Klarna — giai đoạn công bố / điều chỉnh chiến lược AI (customer ops + marketing) nổi trong các gói case “cảnh báo adoption”. |
-| 2 | **Metric shown** (chỉ số họ đưa ra / báo chí nhấn) | Tỷ lệ dùng AI nội bộ; nhấn mạnh “AI-first”, tự động hóa CS; các con số mang tính **coverage / hiện diện** hơn là proof workflow. |
-| 3 | **Metric layer** | Chủ yếu **Activation / Engagement** (có dùng, có tích hợp) — thiếu **Quality / Trust / Value** gắn ticket thật. |
-| 4 | **What this proves** | Tổ chức **có khả năng triển khai** công cụ AI ở quy mô lớn; có narrative thị trường mạnh → chứng minh **khả năng lan truyền (diffusion)**. |
-| 5 | **What this does NOT prove** | Không chứng minh **sai sót CS giảm** bền vững, **chi phí/xử lý ticket** tốt hơn sau kiểm soát chất lượng, hay **người dùng cuối** chấp nhận trade-off chất lượng. |
-| 6 | **Missing metric** | **% ticket đóng trong SLA** sau AI + QA sample; **rework / escalation** sau draft AI; **trust proxy** (thumbs-down, complaint theme) theo workflow. |
-| 7 | **Biggest risk** | **Measurement trap:** đo “đã AI hóa” thay vì đo **kết quả quy trình** → ban lãnh đạo quyết định scale dựa trên vanity. |
-| 8 | **Lesson for our dashboard** | Mỗi workflow phải có **chuỗi usage → human review → quality/trust → value**; có ít nhất một chỉ số **outcome hoặc trust** không thay thế bằng prompt count. |
+| # | Trường | Nội dung | Nguồn |
+|---|---|---|---|
+| 1 | **Case** | Klarna (giai đoạn truyền thông AI-first và các điều chỉnh sau đó). | S1, S2 |
+| 2 | **Metric shown** | Các chỉ số được nhấn mạnh ở lớp case gồm coverage/khối lượng AI xử lý và narrative hiệu quả vận hành ban đầu. | S1 |
+| 3 | **Metric layer** | Nghiêng về **Activation/Engagement/Productivity**; thiếu bằng chứng sâu cho **Quality/Trust/Value** theo workflow phức tạp. | S1 + phân tích từ S3 |
+| 4 | **What this proves** | Tổ chức có thể rollout AI nhanh và đạt độ phủ cao ở bề mặt sử dụng. | S1 |
+| 5 | **What this does NOT prove** | Không tự chứng minh chất lượng dịch vụ bền vững, mức tin cậy người dùng cuối, hay ROI dài hạn nếu thiếu các metric hậu kiểm. | Phân tích từ S1, S2, S3 |
+| 6 | **Missing metric** | Escalation rate theo luồng AI, QA pass sample, override/rework có lý do, complaint theme sau AI. | S3 (metrics ladder + measurement trap) |
+| 7 | **Biggest risk** | **Measurement trap**: xem coverage là thành công, rồi scale trước khi quality/trust ổn định. | S3, tham chiếu S2 |
+| 8 | **Lesson for our dashboard** | Mỗi workflow phải có chuỗi đo: activation -> human confirm -> quality/trust -> value; không dùng prompt/session làm chỉ số chính. | S3 |
 
 ---
 
 ## Ghi chú thách thức cá nhân (gắn Block 1)
 
-**Tình huống 1 (AI PT Copilot):** beta dùng tuần đầu rồi giảm; nghi ngờ gợi ý tư thế → thiếu human-in-the-loop & metric trust.  
-**Tình huống 2 (nhóm môn + ChatGPT draft):** tuần 1 nhiều, tuần 2 bỏ vì bản nháp quá chung → thiếu review + đo nhầm “có dùng AI”.
+- **Tình huống cá nhân:** AI PT Copilot tuần đầu được dùng nhiều nhưng giảm mạnh tuần 2.
+- **Dấu hiệu kẹt:** user override cao ở set nặng, completion không ổn định.
+- **Giả thuyết:** thiếu human-in-the-loop có đo được và team đang đo usage thay vì trust/quality/value.
+- **Nguồn bằng chứng nội bộ:** quan sát pilot nhóm trong buổi lab Day 23 (sample nhỏ, không external benchmark).

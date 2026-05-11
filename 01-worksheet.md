@@ -2,6 +2,23 @@
 
 File này dùng để nhóm điền trong lớp, sau đó copy nội dung cuối vào `03-product-roi-dashboard.md` trong repo cá nhân của từng thành viên.
 
+## Quy tắc mới về nguồn (bắt buộc)
+
+- Mọi **metric**, **baseline/target**, **dẫn chứng case** đều phải có nguồn cụ thể.
+- Không dùng số liệu do AI tự sinh; nếu là ước lượng nội bộ thì ghi rõ "pilot nội bộ" + thời điểm + cỡ mẫu.
+- Khi ghi nhận định, tách rõ **Fact từ nguồn** và **Phân tích nhóm**.
+
+### Source map dùng chung cho worksheet
+
+- **E1:** https://openai.com/index/morgan-stanley/
+- **E2:** https://openai.com/index/klarna/
+- **E3:** https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/
+- **E4:** `05-reference-document.md` (Section 6, 7, 10)
+- **I1:** Pilot log nội bộ nhóm Day 23 (cohort nhỏ 5-8 user, 2026-05-11)
+- **I2:** Ghi chú red-team trong lớp (2026-05-11)
+
+> Mẹo điền nhanh: ở cột `Data source`, ghi luôn mã nguồn (VD: `I1`, `E2+E3`) để truy vết.
+
 ---
 
 ## 0. Thông tin nhóm

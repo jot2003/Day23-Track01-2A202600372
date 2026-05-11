@@ -5,29 +5,47 @@
 
 ---
 
+## Nguồn trích dẫn dùng trong bảng
+
+- **C1 (practitioner/company-published):** OpenAI — Morgan Stanley case study: https://openai.com/index/morgan-stanley/
+- **C2 (practitioner/company-published):** OpenAI — Klarna case study: https://openai.com/index/klarna/
+- **C3 (major news):** Reuters — Klarna shifts AI focus (2025): https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/
+- **C4 (teaching reference):** 05-reference-document.md (Section 6, 7.3, 7.5, 10)
+
+> Quy tắc dùng nguồn: chỉ khẳng định định lượng khi có link; phần suy luận chiến lược ghi rõ “phân tích nhóm”.
+
+---
+
 ## Bảng điền
 
 | Trường | Case thành công | Case thất bại / cảnh báo |
 |--------|-----------------|---------------------------|
-| **Case** | **Stripe** — AI hỗ trợ dev nội bộ / tự động hóa tác vụ kỹ thuật có kiểm soát | **Klarna** — narrative AI-first và áp lực adoption rộng, sau đó điều chỉnh công khai truyền thông / phạm vi |
-| **AI được dùng trong quy trình nào?** | Lặp vòng: dev hỏi → AI gợi ý → **PR + review** → merge; có guardrail nội bộ | Customer service / marketing: draft tự động, routing, trả lời nhanh — thiếu **chuỗi đo chất lượng ticket** rõ trước khi khoe scale |
-| **Người dùng chính là ai?** | Kỹ sư có kỹ năng baseline cao; có **owner workflow** (team platform) | Nhân viên CS + quản lý vận hành + stakeholder bên ngoài (khách) |
-| **Họ đo chỉ số gì?** | Chỉ số gắn **throughput + chất lượng** (ví dụ: cycle time, defect/rework sau thay đổi code) — theo tinh thần case “engineering org” | Số liệu kiểu **dùng AI / phủ sóng** (tỷ lệ tác vụ qua AI, messaging “AI-first”) |
-| **Chỉ số đó thuộc lớp nào?** | **Productivity + Quality (+ Trust nội bộ qua review)** | **Activation / Engagement** (có dùng, có coverage) |
-| **Chỉ số đó chứng minh được gì?** | Cải thiện có thể kiểm chứng trong **hệ thống ticket code** và gate CI | Khả năng **triển khai nhanh** và tạo **wow** truyền thông |
-| **Chỉ số đó chưa chứng minh được gì?** | Không tự chứng minh **ROI tài chính tổng** nếu không gắn cost model | Không chứng minh **CSAT / complaint / SLA** sau khi scale cho khách |
-| **Thiếu chỉ số nào?** | Cost to serve engineering (tuỳ giai đoạn) | **Escalation rate**, **QA sample pass**, **theme khiếu nại** theo luồng AI |
-| **Rủi ro lớn nhất** | Over-rely AI → nợ kỹ thuật nếu bỏ review | **Measurement trap** + scale trước khi trust/quality ổn định |
-| **Bài học cho dashboard nhóm** | Gắn metric vào **artifact có review** (log buổi tập + xác nhận người dùng / coach) | Không báo cáo “% bật AI” là thành công; cần **trust + outcome** theo từng workflow |
+| **Case** | **Morgan Stanley** — triển khai AI assistant trong môi trường compliance cao | **Klarna** — tín hiệu rollout nhanh + cảnh báo về trưởng thành hệ metric |
+| **AI được dùng trong quy trình nào?** | Wealth advisor tra cứu tri thức nội bộ và chuẩn bị trả lời khách hàng, có quy trình kiểm soát | Customer service workflow với mục tiêu xử lý volume lớn và tối ưu vận hành |
+| **Người dùng chính là ai?** | Advisors / nhân sự nghiệp vụ tài chính | Nhân sự CS, vận hành, và người dùng cuối chịu tác động chất lượng dịch vụ |
+| **Họ đo chỉ số gì?** | Case nhấn mạnh adoption + tốc độ truy xuất tri thức + trust architecture (eval/feedback/compliance) | Case nhấn mạnh khối lượng AI xử lý, hiệu quả vận hành ban đầu, câu chuyện scale |
+| **Chỉ số đó thuộc lớp nào?** | Activation + Productivity + Trust (có compliance gate) | Activation / Productivity (coverage-volume) |
+| **Chỉ số đó chứng minh được gì?** | Có thể mở rộng AI trong môi trường rủi ro cao khi trust được thiết kế từ đầu | Có thể tăng tốc xử lý và tạo hiệu ứng triển khai nhanh |
+| **Chỉ số đó chưa chứng minh được gì?** | Chưa tự động chứng minh toàn bộ client outcome dài hạn nếu thiếu lớp business impact độc lập | Chưa đủ chứng minh chất lượng dịch vụ bền vững ở các case phức tạp |
+| **Thiếu chỉ số nào?** | Cost-to-serve/impact tài chính chuẩn hóa theo giai đoạn | Escalation quality, complaint theme, QA sample pass, trust sau handoff |
+| **Rủi ro lớn nhất** | Dựa quá mạnh vào success narrative vendor mà thiếu external triangulation | Measurement trap: coverage cao bị hiểu thành value bền vững |
+| **Bài học cho dashboard nhóm** | Thiết kế trust architecture + owner + failure path trước khi scale | Không báo cáo “% bật AI” như KPI chính; bắt buộc có quality/trust/value theo workflow |
 
 ---
 
 ## Câu chốt của nhóm
 
 ```markdown
-Case thành công dạy nhóm tôi rằng: metric mạnh là metric đi qua **cổng kiểm chất lượng** (review / rework thấp), không chỉ throughput.
+Case thành công dạy nhóm tôi rằng: adoption bền vững cần trust architecture (human review, compliance gate, feedback loop), không chỉ metric hoạt động.
 
-Case thất bại/cảnh báo dạy nhóm tôi rằng: **wow và coverage** dễ thành vanity nếu không đo **hậu quả trên người dùng cuối**.
+Case cảnh báo dạy nhóm tôi rằng: coverage/volume chỉ là tín hiệu giai đoạn đầu; nếu thiếu quality/trust metric thì quyết định scale rất dễ lệch.
 
-Vì vậy dashboard nhóm tôi phải tránh: chỉ báo cáo session count, prompt count, hoặc “% user bật AI” mà không có nhánh **quality/trust/value**.
+Vì vậy dashboard nhóm tôi phải tránh: chỉ báo cáo session count, prompt count, hoặc % user bật AI mà không có bằng chứng outcome theo workflow.
 ```
+
+---
+
+## Traceability note
+
+- Mọi claim định lượng/public trong file này phải truy vết được về C1/C2/C3.
+- Mọi nhận định suy luận của nhóm dựa trên bài giảng và synthesis được ghi rõ qua C4.
