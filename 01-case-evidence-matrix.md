@@ -1,17 +1,19 @@
 # 01 — Case Evidence Matrix (Block 2, cá nhân)
 
 **Học viên:** Hoàng Kim Trí Thành — **Mã:** 2A202600372  
-**Case cá nhân chọn:** Klarna — cảnh báo bẫy đo adoption bằng coverage/usage.
+**Case cá nhân chọn:** Learner tự học AI bằng ChatGPT/YouTube nhưng không tích lũy được năng lực (problem-fit cho Adaptix).
 
 ---
 
-## Nguồn dùng cho case này (bắt buộc trích dẫn)
+## Nguồn dùng cho case này
 
-- **S1 (practitioner/company-published):** OpenAI — Klarna case study: https://openai.com/index/klarna/
-- **S2 (major news):** Reuters — Klarna điều chỉnh trọng tâm AI năm 2025: https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/
-- **S3 (teaching reference):** 05-reference-document.md (Section 6, 7.5, 10)
+- **P2:** Customer Interview: https://www.notion.so/Customer-Interview-341cfef431db809da21feabdd5b4324d?pvs=21
+- **P1:** Lean Canvas: https://www.notion.so/Lean-canvas-342cfef431db801485acd15514d1b3b4?pvs=21
+- **P5:** BKT docs: https://www.notion.so/Thu-t-to-n-Bayesian-Knowledge-Tracing-BKT-33ccfef431db80b38bc7f749633b7a27?pvs=21
+- **P4:** User flow: https://www.notion.so/Lu-ng-ng-i-d-ng-33dcfef431db8056ab77ef9cfb4a53bf?pvs=21
+- **P7:** 05-reference-document.md (metrics ladder / measurement trap)
 
-> Lưu ý: phần nào không có số liệu định lượng từ nguồn công khai thì ghi rõ là “nhận định phân tích”, không bịa thêm số.
+> Quy tắc: không có số định lượng ngoài nguồn thì ghi rõ là “nhận định từ interview/quan sát nội bộ”.
 
 ---
 
@@ -19,20 +21,19 @@
 
 | # | Trường | Nội dung | Nguồn |
 |---|---|---|---|
-| 1 | **Case** | Klarna (giai đoạn truyền thông AI-first và các điều chỉnh sau đó). | S1, S2 |
-| 2 | **Metric shown** | Các chỉ số được nhấn mạnh ở lớp case gồm coverage/khối lượng AI xử lý và narrative hiệu quả vận hành ban đầu. | S1 |
-| 3 | **Metric layer** | Nghiêng về **Activation/Engagement/Productivity**; thiếu bằng chứng sâu cho **Quality/Trust/Value** theo workflow phức tạp. | S1 + phân tích từ S3 |
-| 4 | **What this proves** | Tổ chức có thể rollout AI nhanh và đạt độ phủ cao ở bề mặt sử dụng. | S1 |
-| 5 | **What this does NOT prove** | Không tự chứng minh chất lượng dịch vụ bền vững, mức tin cậy người dùng cuối, hay ROI dài hạn nếu thiếu các metric hậu kiểm. | Phân tích từ S1, S2, S3 |
-| 6 | **Missing metric** | Escalation rate theo luồng AI, QA pass sample, override/rework có lý do, complaint theme sau AI. | S3 (metrics ladder + measurement trap) |
-| 7 | **Biggest risk** | **Measurement trap**: xem coverage là thành công, rồi scale trước khi quality/trust ổn định. | S3, tham chiếu S2 |
-| 8 | **Lesson for our dashboard** | Mỗi workflow phải có chuỗi đo: activation -> human confirm -> quality/trust -> value; không dùng prompt/session làm chỉ số chính. | S3 |
+| 1 | **Case** | Người học junior dev muốn chuyển AI engineer nhưng học rời rạc qua YouTube + ChatGPT + docs. | P2, P1 |
+| 2 | **Metric shown** | Hiện tại thường tự đo bằng số giờ học, số video xem, số prompt hỏi AI. | P2, P7 |
+| 3 | **Metric layer** | Chủ yếu Activation/Engagement bề mặt; thiếu Quality/Value cho năng lực thật. | P7 |
+| 4 | **What this proves** | Learner có động lực học và chủ động tìm tài nguyên. | P2 |
+| 5 | **What this does NOT prove** | Không chứng minh mastery bền vững, không chứng minh readiness để apply AI job. | P2, P5 |
+| 6 | **Missing metric** | Node mastery movement (BKT), transfer-question accuracy, portfolio milestone completion. | P5, P4 |
+| 7 | **Biggest risk** | Measurement trap: học nhiều nhưng không tích lũy năng lực và không có output để show. | P2, P7 |
+| 8 | **Lesson for our dashboard** | Dashboard Adaptix phải đo theo chuỗi activation -> engagement -> mastery -> portfolio -> interview readiness. | P4, P5, P7 |
 
 ---
 
 ## Ghi chú thách thức cá nhân (gắn Block 1)
 
-- **Tình huống cá nhân:** AI PT Copilot tuần đầu được dùng nhiều nhưng giảm mạnh tuần 2.
-- **Dấu hiệu kẹt:** user override cao ở set nặng, completion không ổn định.
-- **Giả thuyết:** thiếu human-in-the-loop có đo được và team đang đo usage thay vì trust/quality/value.
-- **Nguồn bằng chứng nội bộ:** quan sát pilot nhóm trong buổi lab Day 23 (sample nhỏ, không external benchmark).
+- **Tình huống cá nhân:** học AI bằng tài nguyên rời rạc, khi quay lại concept cũ thì mơ hồ.
+- **Dấu hiệu kẹt:** không biết đang thiếu prerequisite nào, không có benchmark tiến bộ rõ.
+- **Giả thuyết:** tutor thiếu persistent learner context và thiếu hệ đo mastery theo node.
