@@ -8,11 +8,11 @@
 
 | Trường | Trả lời |
 |---|---|
-| Nhóm | |
-| Thành viên + phần phụ trách | |
-| Sản phẩm / công cụ AI chọn phân tích | |
-| Người dùng chính | |
-| Link / file nộp cuối | |
+| Nhóm | VinUni A20 — AI PT Copilot (nhóm 4) |
+| Thành viên + phần phụ trách | 1) Hoàng Kim Trí Thành (2A202600372) — [điền phụ trách]  2) Quách Gia Được (2A202600423) — [điền phụ trách]  3) Nguyễn Thành Nam (2A202600205) — [điền phụ trách]  4) Nguyễn Trọng Tiến (2A202600228) — [điền phụ trách] |
+| Sản phẩm / công cụ AI chọn phân tích | [điền] |
+| Người dùng chính | [điền] |
+| Link / file nộp cuối | [điền] |
 
 ---
 
@@ -22,12 +22,10 @@ Mỗi người viết 1-2 tình huống trong 10 phút đầu, không dùng AI.
 
 | Thành viên | Tình huống AI bị kẹt | Dấu hiệu bị kẹt | Giả thuyết ban đầu |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Hoàng Kim Trí Thành (2A202600372) | | | |
+| Quách Gia Được (2A202600423) | | | |
+| Nguyễn Thành Nam (2A202600205) | | | |
+| Nguyễn Trọng Tiến (2A202600228) | | | |
 
 ### Nhóm gom lại thành 3-5 pattern
 
