@@ -27,7 +27,7 @@ File này dùng để nhóm điền trong lớp, sau đó copy nội dung cuối
 | Trường | Trả lời |
 |---|---|
 | Nhóm | VinUni A20 — Adaptix |
-| Thành viên + phần phụ trách | Hoàng Kim Trí Thành (2A202600372) — điều phối + decision memo; Quách Gia Được (2A202600423) — workflow map + tutor UX; Nguyễn Thành Nam (2A202600205) — case comparison + red-team log; Nguyễn Trọng Tiến (2A202600228) — metric design + data source/owner |
+| Thành viên + phần phụ trách | Hoàng Kim Trí Thành (2A202600372) — điều phối + decision memo |
 | Product chọn phân tích | Adaptix — AI learning companion cho lộ trình AI Engineer |
 | Người dùng chính | Sinh viên CS mới ra trường / đi làm 1-2 năm, chưa có AI production experience |
 | Link repo / file nộp cuối | 01-case-evidence-matrix.md, 02-case-comparison.md, 03-product-roi-dashboard.md, 04-reflection.md |
@@ -41,9 +41,9 @@ Tóm tắt bài học từ case study để dùng cho dashboard.
 | Thành viên | Tình huống AI bị kẹt | Dấu hiệu bị kẹt | Giả thuyết ban đầu |
 |---|---|---|---|
 | Hoàng Kim Trí Thành (2A202600372) | Tự học AI qua YouTube + ChatGPT rời rạc | Học nhiều nhưng không build được project deploy | Không có roadmap và đo sai tiến bộ |
-| Quách Gia Được (2A202600423) | Hỏi ChatGPT về tokenization, cosine similarity | Hiểu lúc đó, 1 tuần sau quên lại | Tutor không có memory xuyên session |
-| Nguyễn Thành Nam (2A202600205) | Đọc docs tiếng Anh + Viblo nhưng không liên kết | Không biết đang ở node nào trên lộ trình AI engineer | Thiếu diagnostic map cho prerequisite gap |
-| Nguyễn Trọng Tiến (2A202600228) | Làm quiz random online | Điểm quiz không phản ánh năng lực apply job | Thiếu mastery model và benchmark interview-ready |
+| Quách Gia Được (2A202600423) |  |  |  |
+| Nguyễn Thành Nam (2A202600205) |  |  |  |
+| Nguyễn Trọng Tiến (2A202600228) |  |  |  |
 
 ### Nhóm gom lại thành 3-5 pattern
 
