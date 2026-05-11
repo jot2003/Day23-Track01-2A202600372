@@ -1,8 +1,8 @@
 # Day 23 Track 01 — Hoàng Kim Trí Thành
 
 **Mã học viên:** 2A202600372  
-**Nhóm:** *[Cập nhật tên nhóm trên lớp]*  
-**Thành viên nhóm:** Hoàng Kim Trí Thành (2A202600372) — *[bổ sung tên + mã các bạn còn lại]*  
+**Nhóm:** VinUni A20 — AI PT Copilot  
+**Thành viên nhóm:** Hoàng Kim Trí Thành (2A202600372)  
 **Course repo:** https://github.com/VinUni-AI20k/Day23-Track01-AI-Adoption  
 **Repo nộp bài (fork):** https://github.com/jot2003/Day23-Track01-2A202600372
 

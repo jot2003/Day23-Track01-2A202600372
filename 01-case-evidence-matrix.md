@@ -1,8 +1,7 @@
 # 01 — Case Evidence Matrix (Block 2, cá nhân)
 
 **Học viên:** Hoàng Kim Trí Thành — **Mã:** 2A202600372  
-**Case nhóm được giao / tự chọn để điền matrix:** *Nếu trên lớp GV giao case khác, thay block dưới bằng đúng case đó.*  
-Matrix dưới đây minh họa cho case **Klarna** (tín hiệu cảnh báo adoption / truyền thông vs vận hành) theo gói case trong khóa.
+**Case:** Klarna — tín hiệu cảnh báo adoption (truyền thông và phạm vi đo vs vận hành thật).
 
 ---
 

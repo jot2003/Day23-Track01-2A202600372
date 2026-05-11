@@ -2,7 +2,7 @@
 
 **Sản phẩm:** AI PT Copilot  
 **Phiên bản:** v2 (sau red-team Block 4–5)  
-**Phụ trách tổng hợp file nhóm:** Hoàng Kim Trí Thành (2A202600372) — *[các phần Part: ghi rõ owner từng section trên bản nhóm chính]*
+**Phụ trách tổng hợp file nhóm:** Hoàng Kim Trí Thành (2A202600372)
 
 ---
 
