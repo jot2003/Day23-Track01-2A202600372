@@ -168,6 +168,19 @@
 
 ---
 
+## Part E — Nhật ký red-team (Block 4–5)
+
+Tổng hợp chất vấn theo 4 vai; các cột “Red-team risk / Fix v2” trong Part B bắt nguồn từ đây.
+
+| Vai | Câu hỏi / rủi ro chính | Ảnh hưởng tới v1 | Hành động v2 |
+|-----|------------------------|------------------|----------------|
+| **CFO** | Chi phí dev vs chứng cứ tài chính; funnel onboarding có ROI không? | Activation chỉ “xong nhanh” chưa giải thích drop-off | Thêm **phân tích drop-off theo bước**; cohort 30 user trước scale |
+| **User** | Confirm mỗi set có gây fatigue, ép dùng AI sai cách không? | Engagement = confirm mọi set | **Chỉ set RPE≥7 + QA ngẫu nhiên 20%**; giảm ping recap |
+| **Risk** | AI sai tư thế — ai chịu trách nhiệm; có escalation không? | Thiếu log discomfort gắn session | **Escalation % + anonymous log** + copy an toàn |
+| **Workflow owner** | Ai pull báo cáo; ai hành động khi tile đỏ? | “% bật AI cue” khó vận hành | Owner **PM + Eng**; đổi KPI nội bộ sang **applied cue**; reconcile recap **sampled 30%** |
+
+---
+
 ## ≥2 thay đổi bắt buộc v1 → v2 (tóm tắt)
 
 | # | V1 | V2 |
